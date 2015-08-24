@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+                    <h1>New Table</h1>
+                    {% if message %}
+                    <p class='warn'>
+                        {{ message }}
+                    </p>
+                    {% endif %}
+                    <form method="POST" class="table-form">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-default">Save</button>
+                    </form>
+{% endblock content %}

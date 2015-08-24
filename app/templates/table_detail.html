@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+                    <hr />
+                    <h1>{{ table.name }}</h1>
+                    <h2>contains {{ people|length }} users</h2>
+                    <p>
+                        <a href="{% url 'table_edit' pk=table.pk %}">
+                            <i class="fa fa-pencil-square-o fa-lg"></i>
+                            &nbsp;Edit Table
+                        </a>&nbsp;
+                        <a href="{% url 'table_delete' pk=table.pk %}">
+                            <i class="fa fa-trash-o fa-lg"></i>
+                            &nbsp;Delete Table
+                        </a>
+                    </p>
+                    <div class="member-list">
+                        {% for person in people %}
+                        <div id="{{ person.user_id }}" class="tile member">
+                            <div class="table-edit-pic">
+                                <img class="profile-pic" src="{{ person.profile_picture_url }}" />
+                            </div>
+                            <div class="table-edit-stats">
+                                <ul class="table-edit-stats">
+                                    <li>{{ person.full_name|slice:"0:20" }}</li>
+                                    <li>{{ person.username|slice:"0:20" }}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+{% endblock %}

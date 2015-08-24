@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again or <a href="{% url 'register' %}">Register</i></a> for an account.</p>
+
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span></td>
+            <td><input class="form-control" id="id_username" maxlength="254" name="username" type="text" placeholder="Username"></td>
+        </tr>
+        <tr>
+            <td><span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span></td>
+            <td><input class="form-control" id="id_password" name="password" type="password" placeholder="Password"></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="login" />
+    <input type="hidden" name="next" value="{% url 'user_home' %}" />
+</form>
+
+{% endblock %}

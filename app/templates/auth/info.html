@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <a href="{% url 'logout' %}">
+        <i class="fa fa-sign-out fa-lg"></i>
+        &nbsp;Sign Out
+    </a>
+{% endblock %}
+
+{% block content %}
+    <p>You need to authorize this app to access your Instagram data.</p>
+    <p>Pressing the button below with direct you to Instagram's site.</p>
+
+    <form method="POST" action="{% url 'auth_request' %}">{% csrf_token %}
+        <button type="submit">Continue</button>
+    </form>
+{% endblock %}
+

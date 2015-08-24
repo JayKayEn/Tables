@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+.DS_Store
+project/settings.py
+*~(env)
+app/keys.py

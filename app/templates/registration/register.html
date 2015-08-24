@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Create an account</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <span class="input-group-addon">
+                        <i class="fa fa-user fa-fw"></i>
+                    </span>
+                </td>
+                <td>
+                    <input class="form-control" id="id_username" maxlength="30" name="username" type="text" placeholder="Username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="input-group-addon">
+                        <i class="fa fa-key fa-fw"></i>
+                    </span>
+                </td>
+                <td>
+                    <input class="form-control" id="id_password1" name="password1" type="password" placeholder="Password">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="form-control" id="id_password2" name="password2" type="password" placeholder="Confirm password">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-default">Create Account</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

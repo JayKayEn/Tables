@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block script %}
+        <script>
+            var URL = "{% url 'table_edit' pk=table.pk %}";
+            var members_str = "{{ members }}";
+            var others_str = "{{ others }}";
+            var adds = null;
+            var removes = null;
+        </script>
+        <script type="text/javascript" src="{% static 'js/table-edit.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+                    <h1>Edit Table Members:</h1>
+                    <div class="container">
+                        <div class="submit-buttons">
+                            <button class="save btn btn-default">Save</button>
+                            <button class="cancel btn btn-default">Cancel</button>
+                        </div>
+                        <h2>Table members:</h2>
+                        <div class="member-list"></div>
+                        <hr />
+                        <h2>Other users:</h2>
+                        <div class="other-list"></div>
+                        <div class="submit-buttons">
+                            <button class="save btn btn-default">Save</button>
+                            <button class="cancel btn btn-default">Cancel</button>
+                        </div>
+                    </div>
+{% endblock content %}

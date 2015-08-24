@@ -1,0 +1,64 @@
+div.submit-buttons {
+    position: absolute;
+    right: 10%;
+}
+
+div.member-list, div.other-list {
+
+}
+
+.member {
+    background-color: #13B6E5;
+}
+
+.remove {
+    background-color: #FF3300;
+}
+
+.other {
+    background-color: #E0E0E0;
+}
+
+.add {
+    background-color: #99FF00;
+}
+
+.tile {
+    border: 1px solid black;
+    display: inline-table;
+    margin: 5px;
+    overflow: hidden;
+    padding: 5px;
+    /*position: absolute;*/
+    width:  250px;
+    text-align: left;
+}
+
+.tile div {
+    display: inline-block;
+}
+
+.table-edit-pic img {
+    border: 1px solid black;
+    height: 75px;
+    width: 75px;
+}
+
+div.table-edit-stats {
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+ul.table-edit-stats {
+    text-align: center;
+    list-style-type: none;
+    margin-left: -175px;
+    padding-left: 0px;
+}
+
+ul.table-edit-stats li {
+    text-align: center;
+    margin: 10px;
+}

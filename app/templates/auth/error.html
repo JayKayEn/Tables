@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block nav %}
+    <a href="{% url 'logout' %}">
+        <i class="fa fa-sign-out fa-lg"></i>
+        &nbsp;Sign Out
+    </a>
+{% endblock %}
+
+{% block content %}
+    <p>{{ context.message }}<p>
+    <p>
+        error: {{ context.error }}<br />
+        reason: {{ context.reason }}<br />
+        descrition: {{ context.description }}
+    </p>
+{% endblock %}
